@@ -7,10 +7,10 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: "https://staging.lpitko.ru"
+    baseUrl: "https://santa-secret.ru/"
   },
   env: {
-    login: "muratova.lyuba.94@gmail.com",
-    password: "Qaz123"
+    login: "lm@crosslife.me",
+    password: "DR6956"
   }
 });

@@ -6,7 +6,9 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:dashbord": "npx cypress run --record --key b6f04891-617f-45b7-93e7-d27ecc780dc3"
+    "cy:dashbord": "npx cypress run --record --key b6f04891-617f-45b7-93e7-d27ecc780dc3",
+    "cy:prod:run": "npx cypress run --config-file cypress_prod.config.js",
+    "cy:prod:dashbord": "npx cypress run --config-file cypress_prod.config.js --record --key b6f04891-617f-45b7-93e7-d27ecc780dc3"
   },
   "author": "",
   "license": "ISC",
