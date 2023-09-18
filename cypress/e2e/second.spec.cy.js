@@ -1,11 +1,11 @@
-describe.only("after login", ()=>{
+describe("after login", ()=>{
+    const{login, password} = Cypress.env()
     beforeEach("login", ()=>{
-        cy.visit("/")
+        cy.visit("")
         cy.get('.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > a > .base--clickable > .header-item__text > .txt--med').click();
-        cy.get(':nth-child(3) > .frm').type(Cypress.env('login'));
-        cy.get(':nth-child(4) > .frm').type(Cypress.env('password'));
+        cy.get(':nth-child(3) > .frm').type(login);
+        cy.get(':nth-child(4) > .frm').type(password);
         cy.get('.btn-main').click();
-        
     });
     it("boxes", ()=>{
         cy.get('.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account/boxes"] > .header-item > .header-item__text > .txt--med').should("be.visible");
