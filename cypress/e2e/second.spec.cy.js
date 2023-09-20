@@ -1,4 +1,4 @@
-describe("after login", ()=>{
+describe.only("after login", ()=>{
     const{login, password} = Cypress.env()
     beforeEach("login", ()=>{
         cy.visit("")
@@ -8,23 +8,27 @@ describe("after login", ()=>{
         cy.get('.btn-main').click();
     });
     it("boxes", ()=>{
-        cy.get('.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account/boxes"] > .header-item > .header-item__text > .txt--med').should("be.visible");
-        cy.get('.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account/boxes"] > .header-item > .header-item__text > .txt--med').click();
-        cy.url().should('include', '/account/boxes')
+        const buttonBoxes = '.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account/boxes"] > .header-item > .header-item__text > .txt--med'
+        cy.checkVisibility(buttonBoxes);
+        cy.checkClick(buttonBoxes);
+        cy.checkUrl('/account/boxes')
     });
     it("create a box", ()=>{
-        cy.get('.home-page-buttons > [href="/box/new"] > .btn-main').should("be.visible");
-        cy.get('.home-page-buttons > [href="/box/new"] > .btn-main').click();
-        cy.url().should('include', '/box/new')
+        const buttonCreateBox = '.home-page-buttons > [href="/box/new"] > .btn-main';
+        cy.checkVisibility(buttonCreateBox)
+        cy.checkClick(buttonCreateBox)
+        cy.checkUrl('/box/new')
     });
     it("random", ()=>{
-        cy.get('[href="/randomizer"] > .btn-secondary').should("be.visible");
-        cy.get('[href="/randomizer"] > .btn-secondary').click();
-        cy.url().should('include', '/randomizer')
+        const buttonRandom = '[href="/randomizer"] > .btn-secondary'
+        cy.checkVisibility(buttonRandom);
+        cy.checkClick(buttonRandom);
+        cy.checkUrl('/randomizer')
     });
     it("account", ()=>{
-        cy.get('.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account"] > .header-item > .header-item__text > .txt--med').should("be.visible");
-        cy.get('.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account"] > .header-item > .header-item__text > .txt--med').click();
-        cy.url().should('include', '/account')
+        const buttonAccount = '.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account"] > .header-item > .header-item__text > .txt--med';
+        cy.checkVisibility(buttonAccount)
+        cy.checkClick(buttonAccount)
+        cy.checkUrl('/account')
     });
 })
