@@ -1,0 +1,6 @@
+{
+    "newPasswordField": ".layout-column-start > :nth-child(1) > .frm",
+    "repeatNewPasswordField": ":nth-child(4) > .form-page-group__main > .layout-column-start > :nth-child(2) > .frm",
+    "saveNewPasswordButton": ".layout-row-end > .btn-service",
+    "errorInvalidLoginOrPassword": ".hint > .txt-secondary"
+}

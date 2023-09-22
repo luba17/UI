@@ -40,4 +40,9 @@ Cypress.Commands.add('typeData', (field, data) => {
     cy.get(field).type(data);
 });
 
+Cypress.Commands.add('changePassword', (newPasswordField, repeatNewPasswordField, saveNewPasswordButton, usedPassword) => {
+    cy.get(newPasswordField).type(usedPassword);
+    cy.get(repeatNewPasswordField).type(usedPassword);
+    cy.get(saveNewPasswordButton).click();
 
+})
